@@ -101,9 +101,9 @@ const FunctionsPage = ({ functions }) => {
               
               <div>
                 {features.map((feature, i)=> (
-                  <div className= {styles.feature}>
+                  <div className= {styles.feature} key = {i}>
                     {renderFeatureIcon(i)}
-                    <p key = {i}>{feature}</p>
+                    <p>{feature}</p>
                   </div>
                 ))}
               </div>
