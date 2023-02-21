@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { GiPartyPopper } from 'react-icons/gi'
 import { motion } from 'framer-motion'
 
+import banner from '../../public/fish10.jpeg'
 import styles from './Facilities.module.scss'
 import { client } from '../../utils/client'
 import { facilitiesQuery } from '../../utils/queries'
@@ -30,7 +31,7 @@ const FacilitiesPage = ({ facilities: data }) => {
 
   return (
     <div className= {`${styles.container}`}>
-      <PageBanner image = '/fish10.jpeg' alt = 'things to do' />
+      <PageBanner image = {banner} alt = 'things to do' />
       <div className= 'page__margin'>
         <header className='heading'>
           <h1>{main}</h1>

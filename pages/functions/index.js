@@ -4,11 +4,11 @@ import { BiChair } from 'react-icons/bi'
 import { GiBoatFishing, GiCampfire, GiCampingTent, GiBroom, GiWineBottle, GiForkKnifeSpoon, GiPineTree, GiCrown } from 'react-icons/gi'
 import { FaHeadphones } from 'react-icons/fa'
 
-
-
 import styles from './Functions.module.scss'
 import { client } from '../../utils/client'
 import { functionsQuery } from '../../utils/queries'
+import banner from '../../public/005.png'
+
 import PageBanner from '../../components/PageBanner/PageBanner'
 import ExtraService from '../../components/ExtraService/ExtraService'
 import MakeBooking from '../../components/MakeBooking/MakeBooking'
@@ -66,7 +66,7 @@ const FunctionsPage = ({ functions }) => {
 
   return (
     <div className= {`${styles.container}`}>
-      <PageBanner image={'/005.png'} />
+      <PageBanner image={banner} />
 
       <div className='page__margin'>
         <header className= 'heading'>

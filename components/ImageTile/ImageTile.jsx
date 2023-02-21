@@ -10,6 +10,7 @@ const ImageTile = ({ image, alt }) => {
   const imageProps = useNextSanityImage(client, image)
   const  { src, loader } = imageProps
 
+
   // try{
   //   getPlaiceholder(src).then((res) => console.log(res))
   // } catch (err) {
@@ -22,8 +23,8 @@ const ImageTile = ({ image, alt }) => {
         src = {src}
         loader = {loader}
         fill
-        placeholder='blur'
-        blurDataURL= {src}
+        // placeholder='blur'
+        // blurDataURL= {src}
       />
     </div>
   )
