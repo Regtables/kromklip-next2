@@ -22,6 +22,8 @@ const ImageTile = ({ image, alt }) => {
         src = {src}
         loader = {loader}
         fill
+        placeholder='blur'
+        blurDataURL= {src}
       />
     </div>
   )
