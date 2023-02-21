@@ -7,6 +7,7 @@ import client from '../../utils/client'
 
 const PageBanner = ({ image, alt }) => {
 	// const imageProps = useNextSanityImage(client, image)
+	
   return (
     <div className= {styles.container}>
 			<Image 
@@ -15,6 +16,8 @@ const PageBanner = ({ image, alt }) => {
 				priority
 				alt = {alt}
 				sizes = "(min-width: 450px) 100vw, 40vh"
+				placeholder='blur'
+				blurDataURL= {image}
 			/>
     </div>
   )
