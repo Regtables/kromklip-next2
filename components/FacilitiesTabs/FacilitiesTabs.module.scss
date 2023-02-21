@@ -1,0 +1,33 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.tab{
+  padding: 0.7rem 2rem;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
+  margin: 0.1rem;
+  border-radius: 10px;
+  transition: all 0.5s;
+
+
+  h3{
+    margin: 0;
+    color: white;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-style: italic;
+    text-transform: capitalize;
+
+  }
+
+  &.active{
+     background-color: var(--color-secondary);
+     border: 2px solid var(--color-secondary);
+
+     h3{
+      color: white;
+     }
+  }
+}
