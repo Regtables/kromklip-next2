@@ -4,6 +4,7 @@ import { GiMountainRoad } from 'react-icons/gi'
 import styles from './Activities.module.scss'
 import { client } from '../../utils/client'
 import { activitiesQuery } from '../../utils/queries'
+import banner from '../../public/sorounding1.jpeg'
 
 import Region from '../../components/Region/Region'
 import PageBanner from '../../components/PageBanner/PageBanner'
@@ -12,7 +13,7 @@ const ActivitiesPage = ({ activities: data }) => {
   const { heading: { main, sub }, regions } = data
   return (
     <div className= {styles.container}>
-      <PageBanner image = '/sorounding1.jpeg' alt = 'waterfall' />
+      <PageBanner image = {banner} alt = 'waterfall' />
       <div className='page__margin'>
         <header className= 'heading'>
           <p><GiMountainRoad /></p>

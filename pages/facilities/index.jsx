@@ -32,6 +32,7 @@ const FacilitiesPage = ({ facilities: data }) => {
   return (
     <div className= {`${styles.container}`}>
       <PageBanner image = {banner} alt = 'things to do' />
+      
       <div className= 'page__margin'>
         <header className='heading'>
           <h1>{main}</h1>
