@@ -10,15 +10,6 @@ const ImageTile = ({ image, alt }) => {
   const { image: url, base64 } = image
   const imageProps = useNextSanityImage(client, url)
   const  { src, loader } = imageProps
-  const [dataUrl, setDataUrl] = useState()
-
-  const loadDataUrl = async (url) => {
-    const response = await fetchDataUrl(url)
-    
-    return response
-  }
-
-  
   
   return (
     <div className= {styles.container}>
@@ -27,7 +18,6 @@ const ImageTile = ({ image, alt }) => {
         loader = {loader}
         fill
         alt = {alt}
-        // onLoad = {async () => await loadDataUrl(src)}
         placeholder ='blur'
         blurDataURL = {base64}
       />

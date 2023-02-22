@@ -1,13 +1,15 @@
 import React from 'react';
+import { Grid } from '@mui/material';
+import { getPlaiceholder } from 'plaiceholder';
 
 import styles from './Gallery.module.scss';
-import { client } from '../../utils/client';
+import { client, urlFor } from '../../utils/client';
 import { galleryQuery } from '../../utils/queries';
-import { Grid } from '@mui/material';
+
 import ImageTile from '../../components/ImageTile/ImageTile';
 
-const GalleryPage = ({ gallery }) => {
-	const { heading: { main, sub }, images } = gallery;
+const GalleryPage = ({ gallery, images }) => {
+	const { heading: { main, sub } } = gallery;
 
 	return (
 		<div className={`${styles.container} page__margin`}>
@@ -34,9 +36,21 @@ const GalleryPage = ({ gallery }) => {
 export const getStaticProps = async () => {
 	const galleryData = await client.fetch(galleryQuery());
 
+	const images = await Promise.all(
+		galleryData[0].images.map(async (image) => {
+		  const { base64 } = await getPlaiceholder(urlFor(image).url())
+	
+		  return {
+			image: image,
+			base64: base64
+		  }
+		})
+	)
+
 	return {
 		props: {
 			gallery: galleryData[0],
+			images: images
 		},
 	};
 };

@@ -9,26 +9,26 @@ import ImageTile from '../ImageTile/ImageTile'
 import Highlights from '../Highlights/Highlights'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 
-const FacilitySection = ({ facility }) => {
-  console.log(facility)
+const FacilitySection = ({ facility: data }) => {
+  console.log(data)
+  const { facility: { name, decription, highlights }, images } = data
 
   const renderIcon = () => {
-    if(facility?.name?.toLowerCase() === '4x4 trail'){
+    if(name.toLowerCase() === '4x4 trail'){
       return (
         <p><GiJeep /></p>
       )
-    } else if(facility?.name?.toLowerCase() === 'fishing'){
+    } else if(name.toLowerCase() === 'fishing'){
       return (
         <p><GiFishing /></p>
       )
-    } else if(facility?.name?.toLowerCase() === 'swimming') {
+    } else if(name.toLowerCase() === 'swimming') {
       return (
         <p><TbSwimming /></p>
       )
     }
   }
 
-  const { name, decription, highlights, images } = facility
   return (
     <section className= {styles.container}>
       <main className = {styles.main} >

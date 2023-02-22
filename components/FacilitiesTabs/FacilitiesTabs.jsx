@@ -4,6 +4,7 @@ import { Button } from '@mui/material'
 import styles from './FacilitiesTabs.module.scss'
 
 const FacilitiesTabs = ({ facilities, handleClick, activeSection }) => {
+  console.log(facilities)
   return (
     <div className= {styles.container}>
       {facilities.map((facility, i) => (
@@ -17,8 +18,8 @@ const FacilitiesTabs = ({ facilities, handleClick, activeSection }) => {
           }}
           onClick = {() => handleClick(facility)}
         >
-          <div className= {`${styles.tab} ${facility.name === activeSection.name ? styles.active : ''}`}>
-            <h3>{facility.name}</h3>
+          <div className= {`${styles.tab} ${facility.facility.name === activeSection?.facility?.name ? styles.active : ''}`}>
+            <h3>{facility.facility.name}</h3>
           </div>
         </Button>
       ))}

@@ -15,6 +15,7 @@ import About from '../components/About/About';
 import Pets from '../components/Pets/Pets';
 import ContactNow from '../components/ContactNow/ContactNow';
 import { getPlaiceholder } from 'plaiceholder';
+import { getBase64Array } from '../utils/helpers';
 
 export default function Home({ home, images }) {
   const { video, heading, about } = home
@@ -62,15 +63,6 @@ export default function Home({ home, images }) {
         <Pets />
       </div>
 
-      {/* <div className= {styles.book}>
-        <div className= {styles.text}>
-          <p>Day visitors welcome! Please book in advance</p>
-        </div>
-
-        <div className= {styles.button}>
-          <button>Contact us now</button>
-        </div>
-      </div> */}
       <ContactNow />
 		</div>
 	);
