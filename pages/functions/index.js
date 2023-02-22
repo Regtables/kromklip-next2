@@ -12,9 +12,12 @@ import banner from '../../public/005.png'
 import PageBanner from '../../components/PageBanner/PageBanner'
 import ExtraService from '../../components/ExtraService/ExtraService'
 import MakeBooking from '../../components/MakeBooking/MakeBooking'
+import ImageRow from '../../components/ImageRow/ImageRow'
 
 const FunctionsPage = ({ functions }) => {
-  const { heading: { main, sub }, text, options, features, services } = functions
+  const { heading: { main, sub }, text, options, features, services, images } = functions
+
+  console.log(images)
   
   const renderFeatureIcon = (i) => {
     if(i === 0){
@@ -75,6 +78,8 @@ const FunctionsPage = ({ functions }) => {
         </header>
 
         <div className= {styles.content}>
+          <ImageRow images={images.firstRow} />
+
           <div className= {styles.text}>
             <p>{text}</p>
           </div> 
@@ -109,7 +114,8 @@ const FunctionsPage = ({ functions }) => {
               </div>
             </div>
           </section>
-
+          
+          <ImageRow images = {images.secondRow} />
           <section className= {styles.services}>
             <div className= {styles.subHeading}>
               <h2>Extra Services</h2>
@@ -125,6 +131,8 @@ const FunctionsPage = ({ functions }) => {
           </section>
           
           <MakeBooking />
+
+          <ImageRow images = {images.thirdRow} />
         </div>
 
       </div>

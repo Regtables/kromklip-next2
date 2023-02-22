@@ -18,8 +18,8 @@ const ImageTile = ({ image, alt }) => {
         loader = {loader}
         fill
         alt = {alt}
-        placeholder ='blur'
-        blurDataURL = {base64}
+        placeholder = {base64 ? 'blur' : 'empty'}
+        blurDataURL = {base64 && base64}
       />
     </div>
   )

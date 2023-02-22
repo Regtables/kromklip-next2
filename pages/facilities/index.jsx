@@ -36,7 +36,7 @@ const FacilitiesPage = ({ facilitiesPage: data, facilitiesData }) => {
 
   return (
     <div className= {`${styles.container}`}>
-      {/* <PageBanner image = {banner} alt = 'things to do' /> */}
+      <PageBanner image = {banner} alt = 'things to do' />
       
       <div className= 'page__margin'>
         <header className='heading'>
