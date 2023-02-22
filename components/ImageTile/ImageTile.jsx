@@ -1,30 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useNextSanityImage } from 'next-sanity-image'
-
+import { fetchDataUrl } from '../../api/index'
 
 import styles from './ImageTile.module.scss'
 import { client } from '../../utils/client'
 
 const ImageTile = ({ image, alt }) => {
-  const imageProps = useNextSanityImage(client, image)
+  const { image: url, base64 } = image
+  const imageProps = useNextSanityImage(client, url)
   const  { src, loader } = imageProps
+  const [dataUrl, setDataUrl] = useState()
 
+  const loadDataUrl = async (url) => {
+    const response = await fetchDataUrl(url)
+    
+    return response
+  }
 
-  // try{
-  //   getPlaiceholder(src).then((res) => console.log(res))
-  // } catch (err) {
-  //   console.log(err)
-  // }
-
+  
+  
   return (
     <div className= {styles.container}>
       <Image 
         src = {src}
         loader = {loader}
         fill
-        // placeholder='blur'
-        // blurDataURL= {src}
+        alt = {alt}
+        // onLoad = {async () => await loadDataUrl(src)}
+        placeholder ='blur'
+        blurDataURL = {base64}
       />
     </div>
   )

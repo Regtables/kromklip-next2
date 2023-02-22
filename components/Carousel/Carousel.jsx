@@ -5,8 +5,6 @@ import { useSwipeable } from 'react-swipeable'
 import styles from './Carousel.module.scss'
 
 const Carousel = ( { children: items, activeIndex } ) => {
-  console.log(items)
-  console.log(activeIndex)
   const [index, setIndex] = useState(0)
   const [pause, setPause] = useState(false)
 

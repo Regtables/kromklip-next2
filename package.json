@@ -13,16 +13,19 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.9",
     "@sanity/client": "^5.2.1",
+    "@sanity/image-url": "^1.0.2",
     "framer-motion": "^9.0.4",
     "lqip-modern": "^2.0.0",
     "next": "13.1.6",
     "next-sanity-image": "^5.0.0",
     "node": "^19.6.0",
+    "plaiceholder": "^2.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-swipeable": "^7.0.0",
-    "sass": "^1.58.1"
+    "sass": "^1.58.1",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "eslint": "8.34.0",

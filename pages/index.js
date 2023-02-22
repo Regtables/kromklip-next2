@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { GiBoatFishing } from 'react-icons/gi'
 
 import styles from '../styles/Home.module.scss';
-import { client } from '../utils/client';
+import { client, urlFor } from '../utils/client';
 import { homeQuery } from '../utils/queries';
 
 
@@ -14,17 +14,18 @@ import ImageTile from '../components/ImageTile/ImageTile';
 import About from '../components/About/About';
 import Pets from '../components/Pets/Pets';
 import ContactNow from '../components/ContactNow/ContactNow';
+import { getPlaiceholder } from 'plaiceholder';
 
-export default function Home({ home }) {
-  const { video, heading, images, about } = home
+export default function Home({ home, images }) {
+  const { video, heading, about } = home
 	return (
 		<div className={styles.container}>
-      <Head>
+      {/* <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></link>
-      </Head>
+      </Head> */}
 			<div className={styles.hero}>
 				<Hero />
 			</div>
@@ -78,9 +79,24 @@ export default function Home({ home }) {
 export const getStaticProps = async () => {
   const homeData = await client.fetch(homeQuery())
 
+  const images = await Promise.all(
+    homeData[0].images.map(async (image) => {
+     const src = urlFor(image).url()
+     const { base64 } = await getPlaiceholder(src)
+ 
+     console.log(base64)
+ 
+     return {
+       image: image,
+       base64: base64
+     }
+   })
+  )
+
   return {
     props: {
-      home: homeData[0]
+      home: homeData[0],
+      images: images
     }
   }
 }
