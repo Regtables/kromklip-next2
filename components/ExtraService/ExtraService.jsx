@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from 'framer-motion'
 
 import styles from './ExtraService.module.scss'
 
@@ -6,7 +7,7 @@ const ExtraService = ({ service, icon }) => {
   const { name, price, type, description } = service
 
   return (
-    <div className={styles.container}>
+    <motion.div className={styles.container}  whileHover = {{scale: 1.03}} transition = {{duration: 0.3}}>
       <div className= {styles.title}>
         <h3>{name}</h3>
         {icon(type)}
@@ -20,7 +21,7 @@ const ExtraService = ({ service, icon }) => {
       <div className= {styles.description}>
         <p>{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

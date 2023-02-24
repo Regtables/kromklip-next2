@@ -2,7 +2,7 @@
     border: 3px solid var(--color-primary);
     padding: 1rem;
     border-radius: 10px;
-		min-height: 170px;
+		min-height: 190px;
 
     .title{
 			display: flex;
@@ -11,13 +11,13 @@
 			h3{
 				margin: 0;
 				font-family: var(--font-heading);
-				font-size: 20px;
+				font-size: 24px;
 			}
 
 			h4{
 				margin: 0;
 				margin-left: 0.5rem;
-				font-size: 14px;
+				font-size: 16px;
 				color: rgb(101, 101, 101);
 				font-family: var(--font-family);
 				font-weight: 400;
@@ -25,8 +25,8 @@
 
 			svg{
 				color: var(--color-primary);
-				height: 20px;
-				width: 20px;
+				height: 25px;
+				width: 25px;
 				margin-left: 0.5rem;
 			}
 
@@ -37,7 +37,7 @@
 
 		.type{
 			p{
-				font-size: 12px;
+				font-size: 14px;
 				margin-top: 0.5rem;
 				font-style: italic;
 			}
@@ -46,7 +46,7 @@
 		.description{
 			p{
 				font-family: var(--font-family);
-				font-size: 14px;
+				font-size: 16px;
 			}
 		}
   }

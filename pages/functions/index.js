@@ -78,7 +78,7 @@ const FunctionsPage = ({ functions }) => {
         </header>
 
         <div className= {styles.content}>
-          <ImageRow images={images.firstRow} />
+          <ImageRow images={images.firstRow} priority />
 
           <div className= {styles.text}>
             <p>{text}</p>
@@ -116,6 +116,7 @@ const FunctionsPage = ({ functions }) => {
           </section>
           
           <ImageRow images = {images.secondRow} />
+
           <section className= {styles.services}>
             <div className= {styles.subHeading}>
               <h2>Extra Services</h2>
@@ -123,8 +124,8 @@ const FunctionsPage = ({ functions }) => {
             
             <Grid container spacing = {2}>
               {services.map((service, i) => (
-                <Grid item md = {6} justifyContent = 'center'key = {i} >
-                 <ExtraService service = {service} icon = {renderServiceIcon}/>
+                <Grid item md = {6} justifyContent = 'center' key = {i} >
+                  <ExtraService service = {service} icon = {renderServiceIcon}/>
                 </Grid>
               ))}
             </Grid>

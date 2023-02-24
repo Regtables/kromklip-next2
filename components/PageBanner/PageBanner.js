@@ -17,7 +17,7 @@ const PageBanner = ({ image, alt }) => {
 				fill
 				priority
 				alt = {alt}
-				placeholder = 'blur'
+				// placeholder = 'blur'
 				sizes = "(min-width: 450px) 100vw, 40vh"		
 			/>
     </div>

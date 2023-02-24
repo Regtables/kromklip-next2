@@ -27,3 +27,9 @@ export const functionsQuery = () => {
 
   return query
 }
+
+export const accommodationQuery = () => {
+  const query = '*[_type == "accomodation"]'
+
+  return query
+}

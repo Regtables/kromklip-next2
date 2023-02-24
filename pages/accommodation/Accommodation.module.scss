@@ -1,0 +1,41 @@
+.text{
+  text-align: center;
+  margin: 2rem 0;
+  p{
+    width: 70%;
+    margin: 1rem auto;
+  }
+}
+
+.types{
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.functions{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  .subHeading{
+    h3{
+      font-family: var(--font-heading);
+      font-size: 36px;
+      color: var(--color-primary);
+      margin: 0;
+      border-bottom: 4px solid var(--color-secondary);
+    }
+  
+    p{
+      font-family: var(--font-family);
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+
+  .text{
+    margin-top: 0;
+  }
+
+}

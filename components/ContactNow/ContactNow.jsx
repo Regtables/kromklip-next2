@@ -2,11 +2,11 @@ import React from 'react'
 
 import styles from './ContactNow.module.scss'
 
-const ContactNow = () => {
+const ContactNow = ({ text }) => {
 	return (
 		<div className={styles.container}>
       <div className= {styles.button}>
-			  <button>Contact us now</button>
+			  <button>{ text }</button>
       </div>
 		</div>
 	);

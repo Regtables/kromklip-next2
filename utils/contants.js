@@ -5,14 +5,14 @@ import { MdFamilyRestroom } from 'react-icons/md'
 
 
 export const LINKS = [
+  // {
+  //   link: 'home',
+  //   slug: '/',
+  //   icon: <AiFillHome />
+  // },
   {
-    link: 'home',
-    slug: '/',
-    icon: <AiFillHome />
-  },
-  {
-    link: 'accomodation',
-    slug: '/accomodation',
+    link: 'accommodation',
+    slug: '/accommodation',
     icon: <FaCaravan />
   },
   {
