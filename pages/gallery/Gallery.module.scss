@@ -5,7 +5,14 @@
 .gallery{
   margin-top: 2rem;
   width: 100%;
+  // min-height: 100vh;
 
+  .image{
+    height: 100%;
+    min-height: 200px;
+    width: 100%;
+  }
+  
   img{
     border-radius: 3px;
   }

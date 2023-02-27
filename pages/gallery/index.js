@@ -21,7 +21,7 @@ const GalleryPage = ({ gallery, images }) => {
       </header>
 
       <main className={styles.gallery}>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} height = '100%'>
           {images.map((image, i) => (
             <Grid item md={4} key={i}>
               <div className={styles.image}>

@@ -58,7 +58,7 @@ const FacilitiesPage = ({ facilitiesPage: data, facilitiesData }) => {
             <FacilitySection facility={activeSection} />
 
             <div className= {styles.contact}>
-              <ContactNow />
+              <ContactNow text = 'contact us' />
             </div>
           </motion.div>
           

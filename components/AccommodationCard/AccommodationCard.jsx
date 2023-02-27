@@ -44,7 +44,7 @@ const AccommodationCard = ({ accommodation, renderIcon, handleImageClick }) => {
         </Grid>
       </div> */}
       <Link href = {`/accommodation/${slug.current}`}>
-        <BasicButton text = 'read more' />
+        <BasicButton text = 'read more' justify={'center'} />
       </Link>
     </motion.div>
   )

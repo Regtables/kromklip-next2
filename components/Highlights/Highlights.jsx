@@ -7,10 +7,10 @@ const Highlights = ({ highlights: data }) => {
   return (
     <div className= {styles.container}>
       <div className= {styles.heading}>
-        <h5>{setup}</h5>
+        <h5>{setup ? setup : 'highlights include'}</h5>
       </div>
       <div className= {styles.highlights}>
-        {hightlights.map((highlight, i) => (
+        {hightlights?.map((highlight, i) => (
           <div className= {styles.highlight} key = {i}>
             <p>{highlight}</p>
           </div>

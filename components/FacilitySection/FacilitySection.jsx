@@ -42,9 +42,9 @@ const FacilitySection = ({ facility: data }) => {
         </div>
 
         <div className= {styles.images}>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} height = '100%'>
             {images?.map((image, i) => (
-              <Grid item lg = {4} key = {i} height = '100%' sx = {{borderRadius: '20px'}}>
+              <Grid item md = {4} key = {i} sx = {{borderRadius: '20px'}}>
                 <div className = {styles.image}>
                   <ImageTile image={image} alt = {name} />
                 </div>
