@@ -34,7 +34,7 @@ const AccommodationSml = ({ accommodation }) => {
         <div className={styles.cards}>
           <Grid container justifyContent={'center'} spacing = {4}>
             {accommodation.accomodation.map((card, i) => (
-              <Grid item md = {4} sx = {{borderRadius: '20px'}}>
+              <Grid item md = {4} sx = {{borderRadius: '20px'}} key = {i}>
                 <CardSml card={card} />
               </Grid>
             ))}
