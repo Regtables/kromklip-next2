@@ -26,7 +26,7 @@ const AccommodationSml = ({ accommodation }) => {
             and tent cabins. The chalets are built on the edge of the dam and have
             their own fishing area, built-in braaiers, picnic table and offer a
             lovely view of the dam. Kromklip now offers visitors a take away menu
-            for the days that you don't feel like cooking.
+            for the days that you dont feel like cooking.
           </p>
 
         </div>
