@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from "@mui/material";
 import { getPlaiceholder } from "plaiceholder";
+import { useRouter } from "next/router";
 
 import styles from "./Gallery.module.scss";
 import { client, urlFor } from "../../utils/client";
 import { galleryQuery } from "../../utils/queries";
+import { renderPageIcon } from "../../utils/helpers";
 
 import ImageTile from "../../components/ImageTile/ImageTile";
+import ImagePreview from "../../components/ImagePreview/ImagePreview";
+import { useDispatch } from "react-redux";
 
 const GalleryPage = ({ gallery, images }) => {
-  const {
-    heading: { main, sub },
-  } = gallery;
+  const { heading: { main, sub } } = gallery
+  const router = useRouter()
+  const [showPreview, setShowPreview] = useState(false)
+  const [activeImage, setActiveImage] = useState()
+  const dispatch = useDispatch()
+
+  const handleImageClick = (image) => {
+    setActiveImage(image)
+    setShowPreview(true)
+    // dispatch(setActiveImage(image.image))
+  }
 
   return (
     <div className={`${styles.container} page__margin`}>
       <header className="heading">
+        {renderPageIcon(router.pathname)}
         <h1>{main}</h1>
         <p>{sub}</p>
       </header>
@@ -25,12 +38,15 @@ const GalleryPage = ({ gallery, images }) => {
           {images.map((image, i) => (
             <Grid item md={4} key={i}>
               <div className={styles.image}>
-                <ImageTile image={image} alt="visitor gallery" />
+                <ImageTile image={image} alt="visitor gallery" handleClick={handleImageClick} />
               </div>
             </Grid>
           ))}
         </Grid>
       </main>
+      {showPreview && (
+        <ImagePreview activeImage={activeImage} showPreview = {showPreview} setShowPreview = {setShowPreview} />
+      )}
     </div>
   );
 };

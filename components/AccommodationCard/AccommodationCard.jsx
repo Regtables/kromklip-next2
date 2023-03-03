@@ -19,8 +19,8 @@ const AccommodationCard = ({ accommodation, renderIcon, handleImageClick }) => {
         <h2>{type}</h2>
       </div>
 
-      <div className= {styles.image} onClick = {handleImageClick}>
-        <ImageTile image={{image: image }} priority />
+      <div className= {styles.image}>
+        <ImageTile image={{image: image }} priority handleClick={handleImageClick} />
       </div>
 
       <div className= {styles.description}>

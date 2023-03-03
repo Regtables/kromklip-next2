@@ -32,12 +32,12 @@ export const LINKS = [
   },
   {
     link: 'nearby activities',
-    slug: 'activities',
+    slug: '/activities',
     icon: <GiMountainRoad />
   },
   {
     link: 'contact us',
-    slug: 'contact',
+    slug: '/contact',
     icon: <GiRotaryPhone />
   },
 ]

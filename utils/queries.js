@@ -33,3 +33,9 @@ export const accommodationQuery = () => {
 
   return query
 }
+
+export const contactQuery = () => {
+  const query = '*[_type == "contact"]'
+
+  return query
+}

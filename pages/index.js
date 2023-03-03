@@ -4,7 +4,7 @@ import { GiBoatFishing } from 'react-icons/gi'
 
 import styles from '../styles/Home.module.scss';
 import { client, urlFor } from '../utils/client';
-import { homeQuery } from '../utils/queries';
+import { accommodationQuery, functionsQuery, homeQuery } from '../utils/queries';
 
 
 import Hero from '../components/Hero/Hero';
@@ -16,11 +16,15 @@ import Pets from '../components/Pets/Pets';
 import ContactNow from '../components/ContactNow/ContactNow';
 import { getPlaiceholder } from 'plaiceholder';
 import { getBase64Array } from '../utils/helpers';
+import AccommodationSml from '../components/AccommodationSml/AccommodationSml';
+import FunctionsSml from '../components/FunctionsSml/FunctionsSml';
 
-export default function Home({ home, images }) {
+export default function Home({ home, images, accommodation, functions }) {
   const { video, heading, about } = home
+
+  console.log(accommodation)
 	return (
-		<div className={styles.container}>
+		<div className={`${styles.container}`}>
       {/* <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,6 +59,14 @@ export default function Home({ home, images }) {
         </p>
       </div>
 
+      <div className= {`${styles.accommodation} page__margin`}>
+        <AccommodationSml accommodation={accommodation}/>
+      </div>
+
+      <div className= {`${styles.functions}`}>
+        <FunctionsSml functions={functions} />
+      </div>
+
       <div className= {styles.about}>
         <About about={about} />
       </div>
@@ -85,10 +97,16 @@ export const getStaticProps = async () => {
    })
   )
 
+  const accommodationData = await client.fetch(accommodationQuery())
+
+  const functionsData = await client.fetch(functionsQuery())
+
   return {
     props: {
       home: homeData[0],
-      images: images
+      images: images,
+      accommodation: accommodationData[0],
+      functions: functionsData[0]
     }
   }
 }

@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid } from '@mui/material'
 // import { getPlaiceholder } from 'plaiceholder'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import styles from './Accommodation.module.scss'
 import { client, urlFor } from '../../utils/client'
 import { accommodationQuery } from '../../utils/queries'
+import { renderPageIcon } from '../../utils/helpers'
 
 import PageBanner from '../../components/PageBanner/PageBanner'
 import AccommodationCard from '../../components/AccommodationCard/AccommodationCard'
 import ContactNow from '../../components/ContactNow/ContactNow'
+import ImagePreview from '../../components/ImagePreview/ImagePreview'
 
 import banner from '../../public/accommodation-banner.jpg'
-import Link from 'next/link'
 
-const AccommodationPage = ({ accommodation, handleImageClick }) => {
+const AccommodationPage = ({ accommodation }) => {
   const { text, bannerImage, heading: { main, sub }, accomodation: types, functions } = accommodation
-  console.log(accommodation)
+  const router = useRouter()
+  const [activeImage, setActiveImage] = useState()
+  const [showPreview, setShowPreview] = useState(false)
+
+  const handleImageClick = (image) => {
+    setActiveImage(image)
+    setShowPreview(true)
+  }
 
   const renderAmenitiesIcon = (amenity) => {
     if(amenity === 'catering'){
@@ -31,6 +41,7 @@ const AccommodationPage = ({ accommodation, handleImageClick }) => {
 
       <div className= {`${styles.content} page__margin`}>
         <header className= 'heading'>
+          {renderPageIcon(router.pathname)}
           <h1>{main}</h1>
           <p>{sub}</p>
         </header>
@@ -70,6 +81,9 @@ const AccommodationPage = ({ accommodation, handleImageClick }) => {
           </div>
         </div>
       </div>
+      {showPreview && (
+        <ImagePreview activeImage={activeImage} showPreview = {showPreview} setShowPreview = {setShowPreview} />
+      )}
     </div>
   )
 }

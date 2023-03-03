@@ -4,10 +4,12 @@ import styles from './Footer.module.scss'
 
 import { LINKS } from '../../utils/contants'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Footer = () => {
+  const router = useRouter()
   return (
-    <div className= {styles.container}>
+    <div className= {styles.container} style = {router.pathname === '/contact' ? {paddingTop: '4rem'} : {marginTop: '4rem'}}>
       <div className= {styles.links}>
         {LINKS.map((link,i) => (
           <Link href = {`${link.slug}`} key = {i}>

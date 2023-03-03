@@ -8,7 +8,7 @@ import ImageTile from '../ImageTile/ImageTile'
 import Amenities from '../Amenities/Amenities'
 import BasicButton from '../BasicButton/BasicButton'
 
-const AccommodationVariant = ({ variant }) => {
+const AccommodationVariant = ({ variant, handleImageClick }) => {
   console.log(variant)
   const { name, description, images, amenities, highlights, price, accommodates } = variant
 
@@ -53,7 +53,7 @@ const AccommodationVariant = ({ variant }) => {
           {images?.map((image, i) => (
             <Grid item md = {3} key = {i} height = '100%'>
               <div className= {styles.image}>
-                <ImageTile image = {{image: image}} alt = {name} />
+                <ImageTile image = {{image: image}} alt = {name} handleClick = {handleImageClick} />
               </div>
             </Grid>
           ))}

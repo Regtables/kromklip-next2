@@ -1,15 +1,23 @@
+import React, { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import "../styles/globals.scss";
 import Head from "next/head";
+import { Provider, useSelector } from "react-redux";
+import { store } from "../redux/store";
+import ImagePreview from "../components/ImagePreview/ImagePreview";
+import { selectActiveImage } from "../redux/ImagePreviewSlice";
 
 function MyApp({ Component, pageProps }) {
+  // const [showPreview, setShowPreview] = useState(false)
+  // const activeImage = useSelector(selectActiveImage)
+
   const handleImageClick = () => {
     console.log("You are clicking an image");
   };
 
   return (
-    <div>
+    <Provider store = {store}>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -31,7 +39,10 @@ function MyApp({ Component, pageProps }) {
       <footer>
         <Footer />
       </footer>
-    </div>
+      {/* {showPreview && (
+        <ImagePreview activeImage={activeImage} showPreview = {showPreview} setShowPreview = {setShowPreview} />
+      )} */}
+    </Provider>
   );
 }
 

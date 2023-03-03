@@ -1,5 +1,6 @@
 import React from 'react'
 import { GiMountainRoad } from 'react-icons/gi'
+import { useRouter } from 'next/router'
 
 import styles from './Activities.module.scss'
 import { client } from '../../utils/client'
@@ -8,15 +9,18 @@ import banner from '../../public/sorounding1.jpeg'
 
 import Region from '../../components/Region/Region'
 import PageBanner from '../../components/PageBanner/PageBanner'
+import { renderPageIcon } from '../../utils/helpers'
 
 const ActivitiesPage = ({ activities: data }) => {
   const { heading: { main, sub }, regions } = data
+  const router = useRouter()
+  
   return (
     <div className= {styles.container}>
       <PageBanner image = {banner} alt = 'waterfall' />
       <div className='page__margin'>
         <header className= 'heading'>
-          <p><GiMountainRoad /></p>
+          {renderPageIcon(router.pathname)}
           <h1>{main}</h1>
           <p>{sub}</p>
         </header>

@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styles from './AccommodationType.module.scss'
 import { client } from '../../../utils/client'
 import { accommodationQuery } from '../../../utils/queries'
+
 import AccommodationVariant from '../../../components/AccommodationVariant/AccommodationVariant'
+import ImagePreview from '../../../components/ImagePreview/ImagePreview'
 
 const AccommodationTypePage = ({ accommodation }) => {
-  console.log(accommodation)
   const { heading: { main, sub }, subHeading, variations } = accommodation
+  const [activeImage, setActiveImage] = useState()
+  const [showPreview, setShowPreview] = useState(false)
+
+  const handleImageClick = (image) => {
+    setActiveImage(image)
+    setShowPreview(true)
+  }
+ 
   return (
     <div className= {`${styles.container} page__margin`}>
       <header className= 'heading'>
@@ -21,9 +30,13 @@ const AccommodationTypePage = ({ accommodation }) => {
 
       <div className= {styles.content}>
         {variations.map((variant, i) => (
-          <AccommodationVariant variant={variant} key = {i} />
+          <AccommodationVariant variant={variant} key = {i} handleImageClick = {handleImageClick} />
         ))}
       </div>
+
+      {showPreview && (
+        <ImagePreview activeImage={activeImage} showPreview = {showPreview} setShowPreview = {setShowPreview} />
+      )}
     </div>
   )
 }

@@ -9,7 +9,7 @@ const HomeHeading = () => {
 			<h1>Kromklip</h1>
 			<h2>Function, Wedding Venue & Recreational Holiday Resort</h2>
 			<h3>Lydenburg, Mpumalanga Panorama Route</h3>
-			<p><GiMountainRoad /></p>
+			{/* <p><GiMountainRoad /></p> */}
 		</div>
 	);
 };

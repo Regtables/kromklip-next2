@@ -24,7 +24,7 @@ const Navbar = () => {
         
         {LINKS.map((link, i) => (
           <Link href = {`${link.slug}`} key = {i}>
-            <div className= {`${styles.link} ${link.slug === 'contact' ? styles.contact : ''}`}>
+            <div className= {`${styles.link} ${link.slug === '/contact' ? styles.contact : ''}`}>
               <p>{link.icon}</p>
               <h3>{link.link}</h3>
             </div> 

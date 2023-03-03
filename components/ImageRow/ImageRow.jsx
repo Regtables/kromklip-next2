@@ -5,7 +5,7 @@ import styles from "./ImageRow.module.scss";
 
 import ImageTile from "../ImageTile/ImageTile";
 
-const ImageRow = ({ images, priority, borderRadius }) => {
+const ImageRow = ({ images, priority, borderRadius, handleImageClick }) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={1}>
@@ -17,6 +17,7 @@ const ImageRow = ({ images, priority, borderRadius }) => {
                 alt="function"
                 priority={priority}
 								borderRadius = '10px'
+                handleClick = {handleImageClick}
               />
             </div>
           </Grid>

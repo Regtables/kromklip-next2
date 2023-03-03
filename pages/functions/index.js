@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid } from '@mui/material'
 import { BiChair } from 'react-icons/bi'
 import { GiBoatFishing, GiCampfire, GiCampingTent, GiBroom, GiWineBottle, GiForkKnifeSpoon, GiPineTree, GiCrown } from 'react-icons/gi'
@@ -13,11 +13,22 @@ import PageBanner from '../../components/PageBanner/PageBanner'
 import ExtraService from '../../components/ExtraService/ExtraService'
 import MakeBooking from '../../components/MakeBooking/MakeBooking'
 import ImageRow from '../../components/ImageRow/ImageRow'
+import { useRouter } from 'next/router'
+import { renderPageIcon } from '../../utils/helpers'
+import ImagePreview from '../../components/ImagePreview/ImagePreview'
 
 const FunctionsPage = ({ functions }) => {
   const { heading: { main, sub }, text, options, features, services, images } = functions
+  const router = useRouter()
+  const [activeImage, setActiveImage] = useState()
+  const [showPreview, setShowPreview] = useState(false)
 
   console.log(images)
+  
+  const handleImageClick = (image) => {
+    setActiveImage(image)
+    setShowPreview(true)
+  }
   
   const renderFeatureIcon = (i) => {
     if(i === 0){
@@ -73,12 +84,13 @@ const FunctionsPage = ({ functions }) => {
 
       <div className='page__margin'>
         <header className= 'heading'>
+          {renderPageIcon(router.pathname)}
           <h1>{main}</h1>
           <p>{sub}</p>
         </header>
 
         <div className= {styles.content}>
-          <ImageRow images={images.firstRow} priority />
+          <ImageRow images={images.firstRow} priority handleImageClick = {handleImageClick} />
 
           <div className= {styles.text}>
             <p>{text}</p>
@@ -115,7 +127,7 @@ const FunctionsPage = ({ functions }) => {
             </div>
           </section>
           
-          <ImageRow images = {images.secondRow} />
+          <ImageRow images = {images.secondRow} handleImageClick = {handleImageClick} />
 
           <section className= {styles.services}>
             <div className= {styles.subHeading}>
@@ -133,10 +145,13 @@ const FunctionsPage = ({ functions }) => {
           
           <MakeBooking />
 
-          <ImageRow images = {images.thirdRow} />
+          <ImageRow images = {images.thirdRow} handleImageClick = {handleImageClick} />
         </div>
 
       </div>
+      {showPreview && (
+        <ImagePreview activeImage={activeImage} showPreview = {showPreview} setShowPreview = {setShowPreview} />
+      )}
     </div>
   )
 }

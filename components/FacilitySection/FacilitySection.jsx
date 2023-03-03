@@ -9,7 +9,7 @@ import ImageTile from '../ImageTile/ImageTile'
 import Highlights from '../Highlights/Highlights'
 import AdditionalInfo from '../AdditionalInfo/AdditionalInfo'
 
-const FacilitySection = ({ facility: data }) => {
+const FacilitySection = ({ facility: data, handleImageClick }) => {
   console.log(data)
   const { facility: { name, decription, highlights }, images } = data
 
@@ -46,7 +46,7 @@ const FacilitySection = ({ facility: data }) => {
             {images?.map((image, i) => (
               <Grid item md = {4} key = {i} sx = {{borderRadius: '20px'}}>
                 <div className = {styles.image}>
-                  <ImageTile image={image} alt = {name} />
+                  <ImageTile image={image} alt = {name} handleClick = {handleImageClick} />
                 </div>
               </Grid>
             ))}

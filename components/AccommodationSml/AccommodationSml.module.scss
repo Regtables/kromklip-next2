@@ -1,0 +1,29 @@
+.container{
+  text-align: center;
+}
+
+.heading{
+  
+  h2{
+    font-family: var(--font-heading);
+    font-size: 58px;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+}
+
+.text{
+  font-family: var(--font-family);
+
+  p{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
+.view{
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
