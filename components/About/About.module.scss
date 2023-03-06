@@ -1,0 +1,41 @@
+.container{
+  width: 100%;
+  background-color: var(--color-primary);
+  font-family: var(--font-family);
+  padding: 1rem 4rem;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+  
+  h2{
+    color: white;
+    font-size: 36px;
+    border-bottom: 4px solid white;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+  }
+}
+
+.summarry{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  p{
+    width: 70%;
+    color: white;
+    font-weight: 200;
+  }
+}
+
+.services{
+  display: flex;
+
+  .service{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+  }
+}

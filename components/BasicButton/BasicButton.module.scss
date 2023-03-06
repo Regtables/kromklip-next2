@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  // justify-content: center;
+  margin: 0rem 0;
+  button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    font-family: var(--font-family);
+  }
+}

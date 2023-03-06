@@ -1,0 +1,28 @@
+.container{
+  background-color: var(--color-primary);
+  padding: 1rem;
+  border-radius: 40px;
+}
+
+.heading{
+  background-color: white;
+  border-radius: 20rem;
+  padding: 10px;
+  h5{
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+
+.highlight{
+  p{
+    color: white;
+    font-family: var(--font-family);
+    font-style: italic;
+    font-weight: 200;
+    font-size: 14px;
+  }
+}

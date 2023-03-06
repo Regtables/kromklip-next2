@@ -1,0 +1,30 @@
+.container{
+  // margin-top: 4rem;
+  background-color: var(--color-primary);
+}
+
+.links{
+  display: flex;
+  justify-content: center;
+
+  .link{
+    margin: 1rem;
+
+    h3{
+      font-size: 16px;
+      color: white;
+      font-weight: 400;
+      font-family: var(--font-family);
+    }
+  }
+}
+
+.copyright{
+  display: flex;
+  justify-content: center;
+
+  p{
+    font-size: 12px;
+    color: white;
+  }
+}
