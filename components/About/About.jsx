@@ -5,7 +5,6 @@ import styles from './About.module.scss'
 
 import Service from '../Service/Service'
 
-
 const About = ({ about }) => {
   const { functions, accomodation, summarry, title } = about
   return (
